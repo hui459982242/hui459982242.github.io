@@ -15,7 +15,26 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/garden.js"></script>
 <script type="text/javascript" src="js/functions.js"></script>
-
+<script type="text/javascript">
+	//平台、设备和操作系统
+	var system ={
+		win : false,
+		mac : false,
+		xll : false
+	};
+	//检测平台
+		var p = navigator.platform;
+		system.win = p.indexOf("Win") == 0;
+		system.mac = p.indexOf("Mac") == 0;
+		system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+		//跳转语句
+		if(system.win||system.mac||system.xll){
+			//alert("PC访问");
+			//window.location.href='http://www.bjlyjszx.com/m/mobile/';
+		}else{//非PC访问
+			window.location.href='/phone/index.html';
+		}
+	</script>
 </head>
 
 <body>
@@ -105,24 +124,4 @@ if (!document.createElement('canvas').getContext) {
 <p>适用浏览器：360（极速模式）、FireFox、Chrome、Safari、Opera、傲游、搜狗（高速模式）、世界之窗. 不支持IE8及以下浏览器。</p>
 </div>
 </body>
-	<script type="text/javascript">
-	//平台、设备和操作系统
-	var system ={
-		win : false,
-		mac : false,
-		xll : false
-	};
-	//检测平台
-		var p = navigator.platform;
-		system.win = p.indexOf("Win") == 0;
-		system.mac = p.indexOf("Mac") == 0;
-		system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-		//跳转语句
-		if(system.win||system.mac||system.xll){
-			//alert("PC访问");
-			//window.location.href='http://www.bjlyjszx.com/m/mobile/';
-		}else{//非PC访问
-			window.location.href='/phone/index.html';
-		}
-	</script>
 </html>
